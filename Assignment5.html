@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(241, 241, 241);
+        }
+        .signup-container {
+            margin: 115px 0;
+            width: 435px;
+            height: 570px;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px 0 rgb(218, 216, 216),
+            -3px -3px 5px 0 rgb(218, 216, 216);
+        }
+        .heading {
+            width: 100%;
+            height: 15%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid rgb(223, 220, 220);
+        }
+        .heading h1 {
+            margin-top: 13px;
+            font-family: Arial;
+            font-size: 25px;
+            line-height: 32px;
+            color: #1c1e21;
+            text-align: center;
+        }
+        .heading p {
+            margin-bottom: 7px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 24px;
+            color: #606770;
+            text-align: center;
+        }
+        form {
+            width: 100%;
+            height: 100%;
+        }
+        .body {
+            width: 100%;
+            height: 85%;
+        }
+        .name {
+            width: 100%;
+            height: 17%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .name input {
+            width: 45%;
+            height: 50%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 220, 220);
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 16px;
+            color: #8d949e; 
+            box-sizing: border-box;
+            padding-left: 2.5%;
+        }
+        .email-number {
+            width: 100%;
+            height: 17%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 30px;
+        }
+        .email-number input {
+            width: 93%;
+            height: 50%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 220, 220);
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 16px;
+            color: #8d949e; 
+            box-sizing: border-box;
+            padding-left: 2.5%;
+        }
+        .password {
+            width: 100%;
+            height: 17%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            bottom: 60px;
+        }
+        .password input {
+            width: 93%;
+            height: 50%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 220, 220);
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 16px;
+            color: #8d949e; 
+            box-sizing: border-box;
+            padding-left: 2.5%;
+        }
+        .birth {
+            width: 100%;
+            height: 17%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            bottom: 70px;
+        }
+        .birth p {
+            padding-left: 14.5px;
+            font-family: Arial;
+            font-size: 12px;
+            line-height: 20px;
+            color: #606770;
+            box-sizing: border-box;
+        }
+        .dropdown-container {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 100%;
+        }
+        .dropdown {
+            width: 29%;
+            height: 65%;
+        }
+        .dropdown select {
+            width: 98.2%;
+            height: 100%;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 220, 220);
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 36px;
+            color: #1c1e21; 
+            box-sizing: border-box;
+            padding-left: 6px;
+        }
+        .gender {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 17%;
+            position: relative;
+            bottom: 82px;
+        }
+        .gender p {
+            padding-left: 14.5px;
+            font-family: Arial;
+            font-size: 12px;
+            line-height: 20px;
+            color: #606770;
+            box-sizing: border-box; 
+        }
+        .gender-container {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 14px;
+            padding-right: 17px;
+            height: 100%;
+        }
+        .male, .female, .transgender {
+            width: 30.5%;
+            height: 65%;
+            display: flex;
+            align-items: center;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(223, 220, 220);
+            border-radius: 5px;
+            font-family: Arial;
+            font-size: 15px;
+            line-height: 36px;
+            color: #1c1e21; 
+            box-sizing: border-box;
+        }
+        .male label, .female label, .transgender label {
+            width: 120px;
+            padding-left: 11px;
+        }
+        .terms-and-condition {
+            display: flex;
+            width: 100%;
+            height: 17%; 
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            bottom: 93px;
+        }
+        .terms-and-condition-container {
+            width: 93%;
+            height: 100%;
+        }
+        .terms-and-condition-container p {
+            font-family: Arial;
+            font-size: 11px;
+            line-height: 14.7px;
+            color: #777777;
+        }
+        p input {
+            height: 10px;
+            width: 10px;
+        }
+        p a {
+            color: #385898;
+            text-decoration-line: none;
+        }
+        .signup-button {
+            height: 17%;
+            width: 100%;
+            position: relative;
+            bottom: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .signup-button button {
+            width: 40%;
+            height: 40%;
+            background-color: rgb(12, 119, 12);
+            border-width: 0;
+            border-radius: 5px;
+            color: white;
+            font-family: Arial;
+            font-size: 18px;
+            line-height: 22.7px;
+        }
+        .account {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            bottom: 125px;
+        }
+        .account a {
+            font-family: Arial;
+            font-size: 17px;
+            line-height: 20px;
+            color: #1877f2;
+            text-decoration-line: none;
+        }
+        .no-outline:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup-container">
+            <div class="heading">
+                <h1>Create a new account</h1>
+                <p>It's quick and easy.</p>
+            </div>
+            <form action="">
+                <div class="body">
+                    <div class="name">
+                        <input class="no-outline" type="text" placeholder="First name" required>
+                        <input class="no-outline" type="text" placeholder="Last name" required>
+                    </div>
+                    <div class="email-number">
+                        <input class="no-outline" type="text" placeholder="Mobile number or email address" required>
+                    </div>
+                    <div class="password">
+                        <input class="no-outline" type="password" placeholder="Create password" required>
+                    </div>
+                    <div class="birth">
+                        <p>Date of birth</p>
+                        <div class="dropdown-container">
+                            <div class="dropdown">
+                                <select class="no-outline" name="" id="">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                            <div class="dropdown">
+                                <select class="no-outline" name="" id="">
+                                    <option value="Jan">Jan</option>
+                                    <option value="Feb">Feb</option>
+                                    <option value="Mar">Mar</option>
+                                    <option value="Apr">Apr</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">Jun</option>
+                                    <option value="Jul">Jul</option>
+                                    <option value="Aug">Aug</option>
+                                    <option value="Sep">Sep</option>
+                                    <option value="Oct">Oct</option>
+                                    <option value="Nov">Nov</option>
+                                    <option value="Dec">Dec</option>
+                                </select>
+                            </div>
+                            <div class="dropdown">
+                                <select class="no-outline" name="" id="">
+                                    <option value="">2022</option>
+                                    <option value="">2021</option>
+                                    <option value="">2020</option>
+                                    <option value="">2019</option>
+                                    <option value="">2018</option>
+                                    <option value="">2017</option>
+                                    <option value="">2016</option>
+                                    <option value="">2015</option>
+                                    <option value="">2014</option>
+                                    <option value="">2013</option>
+                                    <option value="">2012</option>
+                                    <option value="">2011</option>
+                                    <option value="">2010</option>
+                                    <option value="">2009</option>
+                                    <option value="">2008</option>
+                                    <option value="">2007</option>
+                                    <option value="">2006</option>
+                                    <option value="">2005</option>
+                                    <option value="">2004</option>
+                                    <option value="">2003</option>
+                                    <option value="">2002</option>
+                                    <option value="">2001</option>
+                                    <option value="">2000</option>
+                                    <option value="">1999</option>
+                                    <option value="">1998</option>
+                                    <option value="">1997</option>
+                                    <option value="">1996</option>
+                                    <option value="">1995</option>
+                                    <option value="">1994</option>
+                                    <option value="">1993</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gender">
+                        <p>Gender</p>
+                        <div class="gender-container">
+                            <div class="male">
+                                <label for="radio1">Male<input class="no-outline" id="radio1" name="radio" type="radio" style="margin-left: 50px;" name="radio" checked></label>
+                            </div>
+                            <div class="female">
+                                <label for="radio2">Female<input class="no-outline" id="radio2" name="radio" type="radio" style="margin-left: 32px;" name="raio"></label>
+                            </div>
+                            <div class="transgender">
+                                <label for="radio3">Others<input class="no-outline" id="radio3" name="radio" type="radio" style="margin-left: 38px;" ></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="terms-and-condition">
+                        <div class="terms-and-condition-container">
+                            <p>
+                                People who use our service may have uploaded your contact information to Facebook. <a href="#">Learn more.</a>
+                            </p>
+                            <p>
+                                <input class="no-outline" type="checkbox" id="checkbox" required> <label for="checkbox">By clicking</label>, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="signup-button">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                    <div class="account">
+                        <a href="#">Already have an account?</a>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+</body>
+</html>
